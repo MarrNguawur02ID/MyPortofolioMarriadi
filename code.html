@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Teknik Jaringan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00a8ff;
+            --neon-green: #00ff9d;
+            --dark-bg: #0f0f17;
+            --text: #e0e0e0;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        .pixel-font {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9em;
+            letter-spacing: -0.5px;
+        }
+        
+        .network-sticker {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .skill-chip {
+            display: inline-block;
+            padding: 6px 12px;
+            margin: 4px;
+            background: rgba(0, 168, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .skill-chip.network {
+            background: rgba(0, 255, 157, 0.1);
+            border-color: var(--neon-green);
+        }
+        
+        .avatar-border {
+            border: 3px solid var(--neon-blue);
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: -8px;
+            left: 0;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-green));
+            border-radius: 3px;
+        }
+        
+        .contact-card {
+            transition: all 0.3s;
+            background: rgba(15, 15, 23, 0.7);
+            border: 1px solid rgba(0, 168, 255, 0.3);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #252530;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-green));
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+    <!-- Network Stickers -->
+    <img src="https://cdn-icons-png.flaticon.com/512/2885/2885432.png" class="network-sticker" style="width: 80px; top: 10%; left: 5%;">
+    <img src="https://cdn-icons-png.flaticon.com/512/2885/2885373.png" class="network-sticker" style="width: 100px; top: 30%; right: 5%;">
+    <img src="https://cdn-icons-png.flaticon.com/512/2885/2885543.png" class="network-sticker" style="width: 70px; bottom: 20%; left: 8%;">
+    <img src="https://cdn-icons-png.flaticon.com/512/2885/2885463.png" class="network-sticker" style="width: 90px; bottom: 30%; right: 10%;">
+    
+    <!-- Main Container -->
+    <div class="relative z-10 max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg bg-opacity-80 backdrop-blur-sm border border-gray-800">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <div class="flex items-center gap-6">
+                <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Profile" class="w-28 h-28 object-cover rounded-full avatar-border">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-white pixel-font">NAMA_KAMU</h1>
+                    <p class="text-gray-400">Fresh Graduate SMK</p>
+                    <p class="text-sm text-blue-400 pixel-font">JURUSAN_TKJ</p>
+                </div>
+            </div>
+        </header>
+        
+        <!-- About Section -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold mb-6 section-title text-white pixel-font">TENTANG_SAYA</h2>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <p class="mb-4">Lulusan SMK Jurusan Teknik Jaringan Komputer dan Telekomunikasi dengan pengalaman praktek kerja industri selama 6 bulan di perusahaan IT.</p>
+                <p>Memiliki sertifikasi MikroTik MTCNA dan Cisco CCNA, siap bekerja di bidang jaringan komputer dan telekomunikasi.</p>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold mb-6 section-title text-white pixel-font">KEAHLIAN</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-400 pixel-font">JARINGAN</h3>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>MikroTik RouterOS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Cisco Packet Tracer</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Jaringan Fiber Optik</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-medium mb-2 text-green-400 pixel-font">SERTIFIKASI:</h4>
+                        <span class="skill-chip network">MikroTik MTCNA</span>
+                        <span class="skill-chip network">Cisco CCNA</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-green-400 pixel-font">LAINNYA</h3>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Pemrograman Dasar</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Instalasi OS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Troubleshooting</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-medium mb-2 text-blue-400 pixel-font">TOOLS:</h4>
+                        <span class="skill-chip">Wireshark</span>
+                        <span class="skill-chip">Putty</span>
+                        <span class="skill-chip">Winbox</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold mb-6 section-title text-white pixel-font">PENGALAMAN</h2>
+            <div class="space-y-6">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-400 pixel-font">PRAKERIN</h3>
+                    <p class="text-gray-400 pixel-font">PT_JAYA_NETWORK | 2022</p>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-gray-300 pl-2">
+                        <li>Instalasi jaringan WiFi 10+ kantor</li>
+                        <li>Maintenance router MikroTik</li>
+                        <li>Troubleshooting jaringan</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-400 pixel-font">PROYEK_SEKOLAH</h3>
+                    <p class="text-gray-400 pixel-font">SMK_N1_JKT | 2020-2023</p>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-gray-300 pl-2">
+                        <li>Bangun jaringan lab sekolah</li>
+                        <li>Rancang topologi Cisco</li>
+                        <li>Presentasi keamanan jaringan</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold mb-6 section-title text-white pixel-font">PENDIDIKAN</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-400 pixel-font">SMK_N1_JKT</h3>
+                    <p class="text-gray-400 pixel-font">TKJ</p>
+                    <p class="text-green-400 mt-2 pixel-font">2020-2023</p>
+                    <p class="text-sm text-gray-300 mt-2">NILAI: 88.5</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-400 pixel-font">SMP_N5_JKT</h3>
+                    <p class="text-gray-400 pixel-font">SMP</p>
+                    <p class="text-blue-400 mt-2 pixel-font">2017-2020</p>
+                    <p class="text-sm text-gray-300 mt-2">NILAI_UN: 85.2</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section>
+            <h2 class="text-xl font-bold mb-6 section-title text-white pixel-font">KONTAK</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <a href="mailto:email@example.com" class="contact-card p-4 rounded-lg flex items-center gap-4">
+                    <div class="text-2xl text-blue-400"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <p class="text-gray-400 pixel-font">EMAIL</p>
+                        <p class="pixel-font">EMAIL@EXAMPLE.COM</p>
+                    </div>
+                </a>
+                <a href="tel:+6281234567890" class="contact-card p-4 rounded-lg flex items-center gap-4">
+                    <div class="text-2xl text-green-400"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <p class="text-gray-400 pixel-font">TELP</p>
+                        <p class="pixel-font">+6281234567890</p>
+                    </div>
+                </a>
+                <a href="https://instagram.com/username" target="_blank" class="contact-card p-4 rounded-lg flex items-center gap-4">
+                    <div class="text-2xl text-pink-400"><i class="fab fa-instagram"></i></div>
+                    <div>
+                        <p class="text-gray-400 pixel-font">IG</p>
+                        <p class="pixel-font">@USERNAME</p>
+                    </div>
+                </a>
+                <a href="https://youtube.com/channel" target="_blank" class="contact-card p-4 rounded-lg flex items-center gap-4">
+                    <div class="text-2xl text-red-400"><i class="fab fa-youtube"></i></div>
+                    <div>
+                        <p class="text-gray-400 pixel-font">YT</p>
+                        <p class="pixel-font">CHANNEL_NAME</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <footer class="mt-12 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm pixel-font">
+            <p>©_2023_NAMA_KAMU._CV_PORTFOLIO.</p>
+        </footer>
+    </div>
+</body>
+</html>
